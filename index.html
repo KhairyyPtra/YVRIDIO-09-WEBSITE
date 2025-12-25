@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Satu Kelas, Satu Orbit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+
+<div class="stars"></div>
+<div class="stars2"></div>
+
+<nav>
+  <div class="nav-container">
+    <h1>🚀 YVRIDIO'09</h1>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#" onclick="showPage('home')">Beranda</a></li>
+      <li><a href="#" onclick="showPage('struktur')">Struktur</a></li>
+      <li><a href="#" onclick="showPage('anggota')">Anggota</a></li>
+      <li><a href="#" onclick="showPage('galeri')">Kenangan</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div id="home" class="page active">
+  <header class="hero">
+    <h2>YVRIDIO'09, TETAP SATU!</h2>
+    <p id="random-quote"></p>
+    <div class="countdown-container">
+      <p>Menuju Masa Depan: <span id="timer">Menghitung...</span></p>
+    </div>
+    <div class="social-links">
+      <a href="https://instagram.com/yvridio09" target="_blank">📸 @yvridio09</a>
+      <a href="mailto:yvridio09@gmail.com">📧 yvridio09@gmail.com</a>
+    </div>
+  </header>
+  <div class="dev-banner">
+  <div class="stripe-bg"></div>
+  <p>⚠️ MASIH DALAM TAHAP PENGEMBANGAN, STAY TUNED! 🚀</p>
+</div>
+</div>
+
+<div id="struktur" class="page">
+  <section>
+    <h2>👔 Struktur Organisasi</h2>
+    <div class="tree-container">
+      <div class="tree-level">
+        <div class="tree-card gold">
+          <span>Wali Kelas</span>
+          <h4>Rasdiana Rachmady</h4>
+        </div>
+      </div>
+      <div class="tree-level">
+        <div class="tree-card petinggi">
+          <span>Ketua Kelas</span>
+          <h4>Zafran Khairy Marwan Putra</h4>
+        </div>
+        <div class="tree-card petinggi">
+          <span>Wakil Ketua</span>
+          <h4>Mutia Dwi Mutmainah</h4>
+        </div>
+      </div>
+      <div class="tree-level">
+        <div class="tree-card">
+          <span>Sekretaris 1 & 2</span>
+          <p>Dinda Keisha R.</p>
+          <p>Nurul Islamiyah I.</p>
+        </div>
+        <div class="tree-card">
+          <span>Bendahara 1 & 2</span>
+          <p>Andini Nur M.</p>
+          <p>Aulyana Putri</p>
+        </div>
+      </div>
+      <div class="tree-level">
+        <div class="tree-card mini">
+          <span>Dekorasi</span>
+          <p>Aqifa Ghaziya Z.</p>
+        </div>
+        <div class="tree-card mini">
+          <span>Publikasi</span>
+          <p>Ratu Nur Khumairo</p>
+        </div>
+      </div>
+      <div class="tree-level">
+        <div class="tree-card mini">
+          <span>Keamanan</span>
+          <p>Muh. Adnan Fabyan</p>
+        </div>
+        <div class="tree-card mini">
+          <span>Perlengkapan</span>
+          <p>Laode Muh. Rezky I.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div id="anggota" class="page">
+  <section>
+    <h2>👨🏻‍🎓 Anggota Kelas</h2>
+    
+    <div class="search-wrapper">
+      <input type="text" id="searchMember" placeholder="Cari nama teman..." onkeyup="filterMembers()">
+      <button onclick="sortMembers('az')" class="btn-sort" title="Urutkan A-Z">🔠</button>
+      <button onclick="sortMembers('random')" class="btn-sort" title="Acak Urutan">🎲</button>
+    </div>
+
+    <div class="anggota-grid" id="memberGrid">
+<div class="anggota-grid" id="memberGrid">
+  <div class="anggota-card" data-name="Zafran Khairy Marwan Putra">
+    <img src="assets/images/anggota/zafran.jpeg">
+    <h4>Zafran Khairy Marwan Putra</h4>
+    <div class="bio">Zafran | Kendari, 6 Agustus 2009</div>
+  </div>
+  <div class="anggota-card" data-name="Muhammad Khoirul Fahmi">
+    <img src="assets/images/anggota/khoirul.jpeg">
+    <h4>Muhammad Khoirul Fahmi</h4>
+    <div class="bio">Fahmi | Kendari, 21 Oktober 2009</div>
+  </div>
+  <div class="anggota-card" data-name="Gerindra Onata Osta Oswada Pracoyo">
+    <img src="assets/images/anggota/geri.jpeg">
+    <h4>Gerindra Onata Osta Oswada Pracoyo</h4>
+    <div class="bio">Geri | Kendari, 2 Mei 2009</div>
+  </div>
+  <div class="anggota-card" data-name="Fazly Al-Fattah Ilin">
+    <img src="assets/images/anggota/fazly.jpeg">
+    <h4>Fazly Al-Fattah Ilin</h4>
+    <div class="bio">Fazly | Kendari, 7 April 2009</div>
+  </div>
+  <div class="anggota-card" data-name="Muhammad Aqsal Rezkyansyah">
+    <img src="assets/images/anggota/aksal.jpeg">
+    <h4>Muhammad Aqsal Rezkyansyah</h4>
+    <div class="bio">Aksal | Kendari, 11 Januari 2010</div>
+  </div>
+  <div class="anggota-card" data-name="Nurul Islamiyah Istiqomah">
+    <img src="assets/images/anggota/nurul.jpeg">
+    <h4>Nurul Islamiyah Istiqomah</h4>
+    <div class="bio">Nurul | Kendari, 27 Maret 2009</div>
+  </div>
+  <div class="anggota-card" data-name="Aulyana Putri">
+    <img src="assets/images/anggota/aul.jpeg">
+    <h4>Aulyana Putri</h4>
+    <div class="bio">Aul | Ulu Lalimbue, 29 November 2009</div>
+  </div>
+
+  <div class="anggota-card" data-name="Aini Akmalunisa Jupri">
+    <img src="assets/images/anggota/anonim.jpeg">
+    <h4>Aini Akmalunisa Jupri</h4>
+    <div class="bio">Aini | Kendari, 19 Juli 2009</div>
+  </div>
+  <div class="anggota-card" data-name="Andini Nur Meisya Mastim">
+    <img src="assets/images/anggota/anonim.jpeg">
+    <h4>Andini Nur Meisya Mastim</h4>
+    <div class="bio">Andini | Kendari, 24 Mei 2009</div>
+  </div>
+  <div class="anggota-card" data-name="Annisa Roidah Sukanto Thayeb">
+    <img src="assets/images/anggota/anonim.jpeg">
+    <h4>Annisa Roidah Sukanto Thayeb</h4>
+    <div class="bio">Annisa | Kendari, 3 Maret 2009</div>
+  </div>
+  <div class="anggota-card" data-name="Dhini Andryani">
+    <img src="assets/images/anggota/anonim.jpeg">
+    <h4>Dhini Andryani</h4>
+    <div class="bio">Dhini | Danagoa, 24 Mei 2009</div>
+  </div>
+  <div class="anggota-card" data-name="Dinda Keisha Rohaendi">
+    <img src="assets/images/anggota/anonim.jpeg">
+    <h4>Dinda Keisha Rohaendi</h4>
+    <div class="bio">Dinda | Kendari, 4 November 2009</div>
+  </div>
+  <div class="anggota-card" data-name="Dzakia Rafifah Artanti">
+    <img src="assets/images/anggota/anonim.jpeg">
+    <h4>Dzakia Rafifah Artanti</h4>
+    <div class="bio">Dzakia | Kendari, 31 Mei 2009</div>
+  </div>
+  <div class="anggota-card" data-name="Dzaqy Ardhani Arham">
+    <img src="assets/images/anggota/anonim.jpeg">
+    <h4>Dzaqy Ardhani Arham</h4>
+    <div class="bio">Dzaqy | Makassar, 17 Januari 2010</div>
+  </div>
+  <div class="anggota-card" data-name="Fauziyyah Khansa Ramadhani">
+    <img src="assets/images/anggota/anonim.jpeg">
+    <h4>Fauziyyah Khansa Ramadhani</h4>
+    <div class="bio">Khansa | Kendari, 17 September 2009</div>
+  </div>
+  <div class="anggota-card" data-name="Salsabillah Yulia Putri S">
+    <img src="assets/images/anggota/anonim.jpeg">
+    <h4>Salsabillah Yulia Putri S</h4>
+    <div class="bio">Salsa | Kendari, 10 Juli 2009</div>
+  </div>
+  <div class="anggota-card" data-name="Aqifa Ghaziya Zalika">
+    <img src="assets/images/anggota/anonim.jpeg">
+    <h4>Aqifa Ghaziya Zalika</h4>
+    <div class="bio">Aqifa | Makassar, 17 Oktober 2009</div>
+  </div>
+  <div class="anggota-card" data-name="Naizilah Rasyikah">
+    <img src="assets/images/anggota/anonim.jpeg">
+    <h4>Naizilah Rasyikah</h4>
+    <div class="bio">Naizilah | Bau-Bau, 10 Agustus 2009</div>
+  </div>
+  <div class="anggota-card" data-name="Ghina Najla Hulwatunnisa">
+    <img src="assets/images/anggota/anonim.jpeg">
+    <h4>Ghina Najla Hulwatunnisa</h4>
+    <div class="bio">Ghina | Kendari, 10 Juli 2009</div>
+  </div>
+  <div class="anggota-card" data-name="Isma Apriyanti">
+    <img src="assets/images/anggota/anonim.jpeg">
+    <h4>Isma Apriyanti</h4>
+    <div class="bio">Isma | Kendari, 7 September 2009</div>
+  </div>
+  <div class="anggota-card" data-name="Janita Fajriyani">
+    <img src="assets/images/anggota/anonim.jpeg">
+    <h4>Janita Fajriyani</h4>
+    <div class="bio">Janita | Konawe Selatan, 4 Januari 2009</div>
+  </div>
+  <div class="anggota-card" data-name="Keyna Noverina Isamu">
+    <img src="assets/images/anggota/anonim.jpeg">
+    <h4>Keyna Noverina Isamu</h4>
+    <div class="bio">Keyna | Kendari, 10 November 2008</div>
+  </div>
+  <div class="anggota-card" data-name="Keyla Noverila Isamu">
+    <img src="assets/images/anggota/anonim.jpeg">
+    <h4>Keyla Noverila Isamu</h4>
+    <div class="bio">Keyla | Kendari, 11 November 2008</div>
+  </div>
+  <div class="anggota-card" data-name="Laode Muhammad Rezky Izzat Pratama">
+    <img src="assets/images/anggota/anonim.jpeg">
+    <h4>Laode Muhammad Rezky Izzat Pratama</h4>
+    <div class="bio">Rezky | Kendari, 26 Desember 2009</div>
+  </div>
+  <div class="anggota-card" data-name="Mutia Dwi Mutmainah">
+    <img src="assets/images/anggota/anonim.jpeg">
+    <h4>Mutia Dwi Mutmainah</h4>
+    <div class="bio">Mutia | Lumajang, 27 Maret 2009</div>
+  </div>
+  <div class="anggota-card" data-name="Muh. Adnan Fabyan Setiawan">
+    <img src="assets/images/anggota/anonim.jpeg">
+    <h4>Muh. Adnan Fabyan Setiawan</h4>
+    <div class="bio">Adnan | Makassar, 8 Mei 2009</div>
+  </div>
+  <div class="anggota-card" data-name="Izzatun Nafsy Nur Rahmi">
+    <img src="assets/images/anggota/anonim.jpeg">
+    <h4>Izzatun Nafsy Nur Rahmi</h4>
+    <div class="bio">Izzatun | Kendari, 15 April 2009</div>
+  </div>
+  <div class="anggota-card" data-name="Khalisa Nuruljannah Yusuf">
+    <img src="assets/images/anggota/anonim.jpeg">
+    <h4>Khalisa Nuruljannah Yusuf</h4>
+    <div class="bio">Khalisa | Kendari, 5 Juni 2009</div>
+  </div>
+  <div class="anggota-card" data-name="Natasya Putri Ramadhani">
+    <img src="assets/images/anggota/anonim.jpeg">
+    <h4>Natasya Putri Ramadhani</h4>
+    <div class="bio">Natasya | Kendari, 2 September 2009</div>
+  </div>
+  <div class="anggota-card" data-name="Radisya Humairah A Labuku">
+    <img src="assets/images/anggota/anonim.jpeg">
+    <h4>Radisya Humairah A Labuku</h4>
+    <div class="bio">Radisya | Kendari, 5 Maret 2009</div>
+  </div>
+  <div class="anggota-card" data-name="Ratu Nur Khumairo">
+    <img src="assets/images/anggota/anonim.jpeg">
+    <h4>Ratu Nur Khumairo</h4>
+    <div class="bio">Ratu | Kendari, 30 Maret 2009</div>
+  </div>
+  <div class="anggota-card" data-name="Andi Idham Pratama">
+    <img src="assets/images/anggota/anonim.jpeg">
+    <h4>Andi Idham Pratama</h4>
+    <div class="bio">Idham | Kendari, 2 Desember 2009</div>
+  </div>
+  <div class="anggota-card" data-name="Iqro Saputri">
+    <img src="assets/images/anggota/anonim.jpeg">
+    <h4>Iqro Saputri</h4>
+    <div class="bio">Iqro | Kendari, - </div>
+  </div>
+</div>
+    </div>
+  </section>
+</div>
+
+<div id="galeri" class="page">
+  <section>
+    <h2>🌌 Kenangan</h2>
+    <div class="galeri">
+      <img src="assets/images/kenangan/villa 1.jpeg" onclick="openModal(this.src)">
+      <img src="assets/images/kenangan/foto kelas 1.jpeg" onclick="openModal(this.src)">
+      <img src="assets/images/kenangan/pramuka.jpeg" onclick="openModal(this.src)">
+      <img src="assets/images/kenangan/lapangan voli.jpeg" onclick="openModal(this.src)">
+      <img src="assets/images/kenangan/gacoan sekelas.jpeg" onclick="openModal(this.src)">
+      <img src="assets/images/kenangan/foto random 1.jpeg" onclick="openModal(this.src)">
+      <img src="assets/images/kenangan/terima rapor.jpeg" onclick="openModal(this.src)">
+      <img src="assets/images/kenangan/upacara lapangan.jpeg" onclick="openModal(this.src)">
+      <img src="assets/images/kenangan/hbd bu ras.jpeg" onclick="openModal(this.src)">
+      <img src="assets/images/kenangan/tido pun sodap ni.jpeg" onclick="openModal(this.src)">
+      <img src="assets/images/kenangan/pizza sekelas.jpeg" onclick="openModal(this.src)">
+      <img src="assets/images/kenangan/fazly turu.jpeg" onclick="openModal(this.src)">
+    </div>
+  </section>
+</div>
+
+<div id="modal" onclick="closeModal()"><img id="modal-img"></div>
+<audio id="bg-music" loop><source src="assets/music/The 1975 - About You.mp3" type="audio/mpeg"></audio>
+<button class="music-btn" onclick="toggleMusic()">🎵</button>
+
+<footer><p>© 2025 — Pernah satu kelas, selamanya satu cerita 🌠</p></footer>
+<script src="script.js"></script>
+</body>
+</html>

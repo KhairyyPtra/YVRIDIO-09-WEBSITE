@@ -1,0 +1,111 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: "Segoe UI", sans-serif; }
+body { background: #020617; color: #e5e7eb; overflow-x: hidden; }
+
+/* BACKGROUND */
+.stars, .stars2 { position: fixed; inset: 0; z-index: 0; animation: moveStars linear infinite; }
+.stars { background-image: url("assets/images/bg/background1.jfif"); animation-duration: 200s; }
+.stars2 { background-image: url("assets/images/bg/bacpng"); animation-duration: 300s; }
+@keyframes moveStars { from { background-position: 0 0; } to { background-position: -10000px 5000px; } }
+
+/* NAV */
+nav { position: sticky; top: 0; z-index: 1000; background: rgba(2, 6, 23, 0.95); padding: 15px 20px; border-bottom: 1px solid #0891b2; }
+.nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto; }
+.nav-links { display: flex; list-style: none; gap: 20px; }
+.nav-links a { color: white; text-decoration: none; font-weight: 500; transition: 0.3s; }
+.nav-links a:hover { color: #22d3ee; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.hamburger span { width: 25px; height: 3px; background: white; }
+
+/* PAGE SYSTEM */
+.page { display: none; position: relative; z-index: 5; min-height: 80vh; }
+.page.active { display: block; }
+section { padding: 60px 20px; background: rgba(2,6,23,0.8); }
+section h2 { text-align: center; font-size: 2rem; margin-bottom: 50px; letter-spacing: 2px; color: #fff; }
+
+/* HERO */
+.hero { padding: 120px 20px; text-align: center; }
+.social-links { display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 30px; }
+.social-links a { color: #22d3ee; text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: 0.3s; }
+.countdown-container { margin-top: 25px; color: #22d3ee; font-weight: bold; font-size: 1.2rem; }
+
+/* STRUKTUR (TREE) */
+.tree-container { display: flex; flex-direction: column; align-items: center; gap: 30px; }
+.tree-level { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; width: 100%; }
+.tree-card { background: #0f172a; padding: 20px; border-radius: 12px; border: 1px solid #1e293b; text-align: center; min-width: 180px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); }
+.tree-card.gold { border-color: #fbbf24; background: rgba(251, 191, 36, 0.05); }
+.tree-card.petinggi { border-color: #0891b2; }
+.tree-card span { display: block; font-size: 0.75rem; color: #22d3ee; text-transform: uppercase; margin-bottom: 8px; }
+.tree-card h4 { font-size: 1rem; }
+.tree-card p { font-size: 0.85rem; color: #94a3b8; }
+.tree-card.mini { min-width: 165px; }
+
+/* ANGGOTA - SEARCH & SORT */
+.search-wrapper { display: flex; justify-content: center; align-items: center; gap: 10px; width: 95%; max-width: 500px; margin: 0 auto 50px auto; }
+#searchMember { flex: 1; padding: 14px 18px; background: #0f172a; color: white; border: 1px solid #0891b2; border-radius: 12px; outline: none; font-size: 0.95rem; }
+.btn-sort { width: 50px; height: 50px; background: #0f172a; color: #22d3ee; border: 1px solid #0891b2; border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; transition: 0.3s; }
+.btn-sort:hover { background: #0891b2; color: white; box-shadow: 0 0 15px rgba(8, 145, 178, 0.4); }
+
+.anggota-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
+.anggota-card { background: #0f172a; padding: 20px; border-radius: 15px; text-align: center; border: 1px solid #1e293b; opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
+.anggota-card.visible { opacity: 1; transform: translateY(0); }
+.anggota-card img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; }
+
+/* KENANGAN */
+.galeri { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.galeri img { width: 100%; height: 250px; object-fit: cover; border-radius: 15px; cursor: pointer; }
+
+/* MODAL & MUSIC */
+#modal { position: fixed; inset: 0; background: rgba(0,0,0,0.95); display: none; justify-content: center; align-items: center; z-index: 9999; }
+#modal img { max-width: 90%; max-height: 80%; border-radius: 10px; }
+.music-btn { position: fixed; bottom: 30px; right: 30px; z-index: 1000; width: 55px; height: 55px; border-radius: 50%; background: #0891b2; color: white; border: none; cursor: pointer; font-size: 1.3rem; }
+
+footer { padding: 40px; text-align: center; font-size: 0.85rem; color: #64748b; }
+
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; right: 20px; background: #0f172a; padding: 20px; border: 1px solid #0891b2; border-radius: 12px; width: 180px; gap: 15px; }
+  .nav-links.active { display: flex; }
+  .galeri { grid-template-columns: 1fr; }
+  .tree-level { gap: 10px; }
+  .tree-card { min-width: 140px; padding: 12px; }
+}
+
+/* BANNER PENGEMBANGAN (TEMA PROYEK GALAKSI) */
+.dev-banner {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-top: 2px solid #fbbf24;
+  border-bottom: 2px solid #fbbf24;
+  background: #020617;
+}
+
+.stripe-bg {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    #fbbf24,
+    #fbbf24 20px,
+    #000 20px,
+    #000 40px
+  );
+  opacity: 0.15; /* Tipis agar tetap masuk tema gelap */
+  z-index: 1;
+}
+
+.dev-banner p {
+  position: relative;
+  z-index: 2;
+  color: #fbbf24;
+  font-weight: bold;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+  text-transform: uppercase;
+}
